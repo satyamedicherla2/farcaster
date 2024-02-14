@@ -1,23 +1,39 @@
 import { getFrameMetadata } from '@coinbase/onchainkit';
 import type { Metadata } from 'next';
+import { NEXT_PUBLIC_URL } from './config';
 
 const frameMetadata = getFrameMetadata({
   buttons: [
     {
-      label: "Begin"
-    }
+      label: 'Story time!',
+    },
+    {
+      action: 'link',
+      label: 'Link to Google',
+      target: 'https://www.google.com',
+    },
+    {
+      label: 'Redirect to pictures',
+      action: 'post_redirect',
+    },
   ],
-  image: `${process.env.NEXT_PUBLIC_GATEWAY_URL}/ipfs/QmTcsMPbQnc7DPp4r8Bfg5PPkdjdMEFjZEPXXhhCH1eEUA/scene1.webp`,
-  post_url: `${process.env.NEXT_PUBLIC_BASE_URL}/api/frame?id=1`,
+  image: {
+    src: `${NEXT_PUBLIC_URL}/park-3.png`,
+    aspectRatio: '1:1',
+  },
+  input: {
+    text: 'Tell me a boat story',
+  },
+  postUrl: `${NEXT_PUBLIC_URL}/api/frame`,
 });
 
 export const metadata: Metadata = {
-  title: 'Cosmic Cowboys',
-  description: 'A frame telling the story of Cosmic Cowboys',
+  title: 'zizzamia.xyz',
+  description: 'LFG',
   openGraph: {
-    title: 'Cosmic Cowboys',
-    description: 'A frame telling the story of Cosmic Cowboys',
-    images: [`${process.env.NEXT_PUBLIC_GATEWAY_URL}ipfs/QmTcsMPbQnc7DPp4r8Bfg5PPkdjdMEFjZEPXXhhCH1eEUA/scene1.webp`],
+    title: 'zizzamia.xyz',
+    description: 'LFG',
+    images: [`${NEXT_PUBLIC_URL}/park-1.png`],
   },
   other: {
     ...frameMetadata,
@@ -27,7 +43,7 @@ export const metadata: Metadata = {
 export default function Page() {
   return (
     <>
-      <h1>Nest Dev</h1>
+      <h1>NEST</h1>
     </>
   );
 }
