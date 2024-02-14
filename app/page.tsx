@@ -5,34 +5,19 @@ import { NEXT_PUBLIC_URL } from './config';
 const frameMetadata = getFrameMetadata({
   buttons: [
     {
-      label: 'Story time!',
-    },
-    {
-      action: 'link',
-      label: 'Link to Google',
-      target: 'https://www.google.com',
-    },
-    {
-      label: 'Redirect to pictures',
-      action: 'post_redirect',
-    },
+      label: "Begin"
+    }
   ],
-  image: {
-    src: `${NEXT_PUBLIC_URL}/park-3.png`,
-    aspectRatio: '1:1',
-  },
-  input: {
-    text: 'Tell me a boat story',
-  },
-  postUrl: `${NEXT_PUBLIC_URL}/api/frame`,
+  image: `${NEXT_PUBLIC_URL}/park-1.png`,
+  post_url: `${NEXT_PUBLIC_URL}/api/frame?id=1`,
 });
 
 export const metadata: Metadata = {
-  title: 'zizzamia.xyz',
-  description: 'LFG',
+  title: 'Cosmic Cowboys',
+  description: 'A frame telling the story of Cosmic Cowboys',
   openGraph: {
-    title: 'zizzamia.xyz',
-    description: 'LFG',
+    title: 'Cosmic Cowboys',
+    description: 'A frame telling the story of Cosmic Cowboys',
     images: [`${NEXT_PUBLIC_URL}/park-1.png`],
   },
   other: {
